@@ -1,0 +1,31 @@
+<form class="w-1/4 mx-auto mt-10 border rounded-md p-5" #LoginForm="ngForm" (ngSubmit)="Save()">
+    <div class="mb-6">
+        <label for="username-success" class="block mb-2 text-sm font-medium"
+            [ngClass]="{'text-green-600 dark:text-green-500':nameInput.touched&&!nameInput.errors,'text-red-600 dark:text-red-500':nameInput.touched&&nameInput.errors}">Your
+            Name</label>
+        <input #nameInput="ngModel" name="nameField" required type="text" id="username-success" [(ngModel)]="name"
+            class=" border border-gray-400 text-sm rounded-lg block w-full p-2.5 dark:bg-green-100"
+            placeholder="Enter Your Name"
+            [ngClass]="{'valid':nameInput.touched&&!nameInput.errors,'invalid':nameInput.touched&&nameInput.errors}">
+        <p *ngIf="nameInput.touched" class="mt-2 text-sm"
+            [ngClass]="{'text-green-600 dark:text-green-500':!nameInput.errors,'text-red-600 dark:text-red-500':nameInput.errors}">
+            {{(nameInput.errors?.required)? "Name is Required" : ""}} </p>
+    </div>
+    <div>
+        <label for="username-error" class="block mb-2 text-sm font-medium"
+            [ngClass]="{'text-green-600 dark:text-green-500':passwordInput.touched&&!passwordInput.errors,'text-red-600 dark:text-red-500':passwordInput.touched&&passwordInput.errors}">Your
+            Password</label>
+        <input #passwordInput="ngModel" name="passwordField" required minlength="8" type="text" id="username-error"
+            placeholder="Enter Your Password" [(ngModel)]="password"
+            class=" border border-gray-400 text-sm rounded-lg block w-full p-2.5 "
+            [ngClass]="{'valid':passwordInput.touched&&!passwordInput.errors,'invalid':passwordInput.touched&&passwordInput.errors}">
+        <p *ngIf="passwordInput.touched" class="mt-2 text-sm"
+            [ngClass]="{'text-green-600 dark:text-green-500':!passwordInput.errors,'text-red-600 dark:text-red-500':passwordInput.errors}">
+            {{(passwordInput.errors?.required)? "Password is Required" : (passwordInput.errors?.minlength)?"Min Password
+            Length is 8 Character!":""}} </p>
+    </div>
+    <button [disabled]="LoginForm.invalid" type="submit" (click)="Save()"
+        class="text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center mt-4 mx-auto"
+        [ngClass]="{' bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800':LoginForm.valid,'bg-gray-400':LoginForm.invalid}">{{string}}
+    </button>
+</form>

@@ -1,0 +1,6 @@
+.invalid {
+  @apply bg-red-50 border-red-500 text-red-900 placeholder-red-700  dark:bg-red-100 focus:ring-red-500 focus:border-red-500 dark:border-red-400;
+}
+.valid {
+  @apply bg-green-50  border-green-500 text-green-900 placeholder-green-700  focus:ring-green-500 focus:border-green-500  dark:border-green-400;
+}

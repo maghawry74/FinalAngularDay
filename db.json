@@ -1,0 +1,39 @@
+{
+  "people": [
+    {
+      "id": 1,
+      "name": "Maghawry",
+      "password": "13253"
+    },
+    {
+      "id": 2,
+      "name": "Ahmed",
+      "password": "26842655"
+    },
+    {
+      "id": 3,
+      "name": "Kareem",
+      "password": "lovesdsd"
+    },
+    {
+      "id": 4,
+      "name": "Amr",
+      "password": "123654"
+    },
+    {
+      "id": 27,
+      "name": "Taha",
+      "password": "123398422"
+    },
+    {
+      "id": 56,
+      "name": "Yasin",
+      "password": "fdnbjfdnbjknfdkjbn"
+    },
+    {
+      "id": 58,
+      "name": "User",
+      "password": "84512302"
+    }
+  ]
+}

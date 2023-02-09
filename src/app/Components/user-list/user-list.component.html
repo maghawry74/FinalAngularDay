@@ -1,0 +1,44 @@
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg w-1/2 mx-auto mt-6">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Id
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Name
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Password
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Actions
+                </th>
+                <td>
+                    <button (click)="addUser()"
+                        class="py-2 mx-auto px-4 rounded-md text-white text-center w-fit bg-green-600 text-base">+</button>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{user.id}}
+                </th>
+                <td class="px-6 py-4">
+                    {{user.name}}
+                </td>
+                <td class="px-6 py-4">
+                    {{user.password}}
+                </td>
+                <td class="px-6 py-4">
+                    <button (click)="Update(user.id)"
+                        class="py-2 mr-4 px-4 rounded-md text-white text-center bg-green-400 ">Edit</button>
+                    <button (click)="Delete(user.id)"
+                        class="py-2 px-4 rounded-md text-white text-center bg-red-700">Remove</button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
